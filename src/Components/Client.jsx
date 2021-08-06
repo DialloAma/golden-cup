@@ -48,7 +48,7 @@ class Client extends Component {
                         <Form.Control type="text" placeholder="Enter Client's Address" name="address" value={this.state.address} onChange={this.handleChange}/>
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Label>Full Name</Form.Label>
+                        <Form.Label>Balance</Form.Label>
                         <Form.Control type="number" placeholder="Enter Client's Solde" name="solde"  value={this.state.solde} onChange={this.handleChange}/>
                     </Form.Group>
                     

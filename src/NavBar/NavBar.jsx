@@ -1,6 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Navbar, Button, NavDropdown, Nav } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 function NavBar() {
     return (
@@ -11,12 +12,12 @@ function NavBar() {
                 <Navbar.Collapse id="basic-navbar-nav"  >
                     <Nav className="mr-auto" style={{textAlign:'right'}}>
                         <NavDropdown title="Client" id="basic-nav-dropdown">
-                            <NavDropdown.Item href="#action/3.1">Add</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to="/AddClient">Add</NavDropdown.Item>
                             <NavDropdown.Item href="#action/3.3">List</NavDropdown.Item>
                         </NavDropdown>
                         <NavDropdown title="Product" id="basic-nav-dropdown">
-                            <NavDropdown.Item href="#action/3.1">Add</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.2">Delivry</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to="/AddProduct">Add</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to="/AddStock">Enter</NavDropdown.Item>
                             <NavDropdown.Item href="#action/3.3">List</NavDropdown.Item>
                         </NavDropdown>
                         <NavDropdown title="Sell" id="basic-nav-dropdown">
