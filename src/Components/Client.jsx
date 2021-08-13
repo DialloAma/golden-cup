@@ -33,15 +33,16 @@ class Client extends Component {
     render() {
         return (
             <div style={{marginLeft:'15rem',marginTop:'2rem',marginRight:'15rem'}}>
+                <h1 style={{textAlign:'center',marginTop:'3rem'}}>Add Clients</h1>
                 <Form onSubmit={this.handleSubmit}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Full Name</Form.Label>
-                        <Form.Control type="text" placeholder="Enter Client's FullName" name="name" value={this.state.name} onChange={this.handleChange}/>
+                        <Form.Control type="text" placeholder="Enter Client's FullName" name="name" value={this.state.name} onChange={this.handleChange} required/>
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicPassword">
                         <Form.Label>Phone Number</Form.Label>
-                        <Form.Control type="number" placeholder="Enter Client's Number" name="phone" value={this.state.phone} onChange={this.handleChange}/>
+                        <Form.Control type="number" placeholder="Enter Client's Number" name="phone" value={this.state.phone} onChange={this.handleChange} required/>
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Address</Form.Label>

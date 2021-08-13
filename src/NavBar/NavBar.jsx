@@ -1,6 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Navbar, Button, NavDropdown, Nav } from 'react-bootstrap';
+import {Navbar, NavDropdown, Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 function NavBar() {
@@ -10,15 +10,23 @@ function NavBar() {
                 <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav"  >
-                    <Nav className="mr-auto" style={{textAlign:'right'}}>
-                        <NavDropdown title="Client" id="basic-nav-dropdown">
+                    <Nav className="mr-auto" >
+                        <NavDropdown title="Client" id="basic-nav-dropdown" style={{marginLeft:'15rem'}}>
                             <NavDropdown.Item as={Link} to="/AddClient">Add</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.3">List</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to="/ListClient">List</NavDropdown.Item>
                         </NavDropdown>
                         <NavDropdown title="Product" id="basic-nav-dropdown">
                             <NavDropdown.Item as={Link} to="/AddProduct">Add</NavDropdown.Item>
-                            <NavDropdown.Item as={Link} to="/AddStock">Enter</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.3">List</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to="/ListProduct">List</NavDropdown.Item>
+                            
+                        </NavDropdown>
+                        <NavDropdown title="Stock" id="basic-nav-dropdown">
+                            <NavDropdown.Item as={Link} to="AddStock">Add</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to="/ListStock">Enter</NavDropdown.Item>
+                        </NavDropdown>
+                        <NavDropdown title="Payement" id="basic-nav-dropdown">
+                            <NavDropdown.Item as={Link} to="AddPayement">Add</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to="/ListPayement">Enter</NavDropdown.Item>
                         </NavDropdown>
                         <NavDropdown title="Sell" id="basic-nav-dropdown">
                             <NavDropdown.Item href="#action/3.1">Selling</NavDropdown.Item>
