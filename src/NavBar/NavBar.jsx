@@ -11,7 +11,7 @@ function NavBar() {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav"  >
                     <Nav className="mr-auto" >
-                        <NavDropdown title="Client" id="basic-nav-dropdown" style={{marginLeft:'15rem'}}>
+                        <NavDropdown title="Client" id="basic-nav-dropdown" >
                             <NavDropdown.Item as={Link} to="/AddClient">Add</NavDropdown.Item>
                             <NavDropdown.Item as={Link} to="/ListClient">List</NavDropdown.Item>
                         </NavDropdown>

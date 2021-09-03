@@ -2,7 +2,9 @@ import NavBar from './NavBar/NavBar';
 import Client from './Components/Client'
 import ListClient from './Components/ListClient';
 import Product from './Components/Product'
+import ListProd from './Components/ListProd';
 import Enter from './Components/Enter'
+
 
 import './App.css';
 
@@ -11,16 +13,16 @@ import { BrowserRouter,Route } from 'react-router-dom';
 import Payed from './Components/Payed';
 
 class App extends Component {
-  constructor(props) {
+/*  constructor(props) {
     super(props)
     this.state = {
-      client: [],
-      product: [],
+     // client: [],
+     // product: [],
       enter: [],
       pay:[],
     }
   }
-  AddClient = (clt) => {
+ AddClient = (clt) => {
     clt.id = Math.random()
     this.setState({
       client: [...this.state.client, clt]
@@ -31,7 +33,7 @@ class App extends Component {
     this.setState({
       product: [...this.state.product, prd]
     })
-  }
+  }*/
   AddEnter = (enter) => {
     enter.id = Math.random()
     this.setState({
@@ -51,13 +53,16 @@ class App extends Component {
         <div>
           <NavBar />
           <Route path="/AddClient">
-          <Client client={this.AddClient} />
+          <Client />
           </Route>
           <Route path="/ListClient">
-          <ListClient listclt={this.state.client} />
+          <ListClient  />
           </Route>
           <Route path="/AddProduct">
-          <Product prod={this.AddProduct} />
+          <Product  />
+          </Route>
+          <Route path="/ListProduct">
+          <ListProd  />
           </Route>
           <Route path="/AddStock">
           <Enter stock={this.AddEnter} />

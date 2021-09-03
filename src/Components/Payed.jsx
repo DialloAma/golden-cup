@@ -5,15 +5,18 @@ import {Form, Button} from 'react-bootstrap'
 class Payed extends Component {
     constructor(props){
         super(props)
+     /*   let today= new Date()
+        let dat =today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();*/
         this.state={
             id: "", 
             number: "", 
             name:"",
             balanc: "", 
-            datep: "", 
+            datep: new Date().toLocaleString(), 
             
 
         }
+        
     }
     handleChange=(e)=>{
       e.preventDefault()
@@ -55,7 +58,7 @@ class Payed extends Component {
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Date</Form.Label>
-                        <Form.Control type="date" placeholder="Enter the date" name="datep" value={this.state.datep} onChange={this.handleChange}/>
+                        <Form.Control type="text" placeholder="Enter the date" name="datep" value={this.state.datep} onChange={this.handleChange} readOnly/> 
                     </Form.Group>
                     
                     <Button variant="primary" type="submit">

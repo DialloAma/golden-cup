@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import {AddProduct} from '../Actions/actionProd';
+import {connect} from 'react-redux'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Form, Button} from 'react-bootstrap'
 
@@ -55,5 +57,8 @@ class Product extends Component {
         );
     }
 }
+const mapDispatchToProps={
+    prod : AddProduct
+}
 
-export default Product;
+export default connect(null,mapDispatchToProps)(Product);

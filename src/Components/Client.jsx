@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Form, Button} from 'react-bootstrap'
+import {connect} from 'react-redux'
+import {AddClient} from '../Actions/clientAction';
 class Client extends Component {
     constructor(props) {
         super(props)
@@ -9,7 +11,7 @@ class Client extends Component {
             name: "",
             phone: "",
             address: "",
-            solde: "",
+            solde: '0',
         }
     }
     handleChange=(e)=>{
@@ -21,6 +23,7 @@ class Client extends Component {
     handleSubmit=(e)=>{
         e.preventDefault()
         this.props.client(this.state)
+        alert("has been added whit succes")
         this.setState({
             id: "",
             name: "",
@@ -61,5 +64,9 @@ class Client extends Component {
         );
     }
 }
+const mapDispatchToProps={
+ client : AddClient
+}
 
-export default Client;
+ 
+export default connect(null,mapDispatchToProps)(Client);
