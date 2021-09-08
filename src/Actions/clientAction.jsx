@@ -15,3 +15,9 @@ export const DeletClt=(id)=>{
         payload : id
     }
 }
+export const UpdateClt=(updat)=>{
+    return{
+       type:'UPD_CLT',
+       payload: updat
+    }
+}

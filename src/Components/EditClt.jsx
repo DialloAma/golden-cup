@@ -2,41 +2,41 @@ import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Form, Button} from 'react-bootstrap'
 import {connect} from 'react-redux'
-import {AddClient} from '../Actions/clientAction';
-class Client extends Component {
+import {UpdateClt} from '../Actions/clientAction'
+
+class EditClt extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            id: "",
-            name: "",
-            phone: "",
-            address: "",
+            id: props.list.id,
+            name: props.list.name,
+            phone: props.list.phone,
+            address: props.list.address,
             solde: '0',
         }
     }
     handleChange=(e)=>{
-       e.preventDefault()
-       this.setState({
-           [e.target.name]: e.target.value
-           })
+        e.preventDefault()
+        this.setState({
+            [e.target.name]: e.target.value
+        })
     }
     handleSubmit=(e)=>{
         e.preventDefault()
-        this.props.client(this.state)
-        alert("has been added whit succes")
+        this.props.UpdateClt(this.state)
         this.setState({
-            id: "",
+            
             name: "",
             phone: "",
-            address: "",
-            solde: "",
-
+            address: ""
         })
+        this.props.closemodal()
+
     }
+     
     render() {
         return (
-            <div style={{marginLeft:'15rem',marginTop:'2rem',marginRight:'15rem'}}>
-                <h1 style={{textAlign:'center',marginTop:'3rem'}}>Add Clients</h1>
+            <div >
                 <Form onSubmit={this.handleSubmit}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Full Name</Form.Label>
@@ -52,21 +52,23 @@ class Client extends Component {
                         <Form.Control type="text" placeholder="Enter Client's Address" name="address" value={this.state.address} onChange={this.handleChange}/>
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Label>Balance</Form.Label>
-                        <Form.Control type="number" placeholder="Enter Client's Solde" name="solde" type="hidden" value={this.state.solde} onChange={this.handleChange}/>
+                        <Form.Label></Form.Label>
+                        <Form.Control type="number" placeholder="Enter Client's Solde" name="solde"  value={this.state.solde} onChange={this.handleChange} type="hidden"/>
                     </Form.Group>
                     
                     <Button variant="primary" type="submit">
                         Submit
                     </Button>
+                    
                 </Form>
             </div>
         );
     }
+    
 }
 const mapDispatchToProps={
- client : AddClient
+ UpdateClt
 }
 
- 
-export default connect(null,mapDispatchToProps)(Client);
+
+export default connect(null,mapDispatchToProps) (EditClt);
