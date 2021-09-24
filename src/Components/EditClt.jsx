@@ -1,20 +1,23 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Form, Button} from 'react-bootstrap'
+import {Form,Button} from 'react-bootstrap'
 import {connect} from 'react-redux'
 import {UpdateClt} from '../Actions/clientAction'
 
+
 class EditClt extends Component {
-    constructor(props) {
+   constructor(props) {
         super(props)
         this.state = {
-            id: props.list.id,
-            name: props.list.name,
-            phone: props.list.phone,
-            address: props.list.address,
-            solde: '0',
-        }
+            id: props.clt.id,
+            name: props.clt.name,
+            phone: props.clt.phone,
+            address: props.clt.address,
+            solde: props.clt.solde,
+         }
     }
+   
+  
     handleChange=(e)=>{
         e.preventDefault()
         this.setState({
@@ -25,7 +28,7 @@ class EditClt extends Component {
         e.preventDefault()
         this.props.UpdateClt(this.state)
         this.setState({
-            
+            id:"",
             name: "",
             phone: "",
             address: ""
@@ -38,6 +41,10 @@ class EditClt extends Component {
         return (
             <div >
                 <Form onSubmit={this.handleSubmit}>
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                        <Form.Label>ID</Form.Label>
+                        <Form.Control type="text" placeholder="Enter Client's FullName" name="name" value={this.state.id} onChange={this.handleChange} required/>
+                    </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Full Name</Form.Label>
                         <Form.Control type="text" placeholder="Enter Client's FullName" name="name" value={this.state.name} onChange={this.handleChange} required/>
@@ -53,7 +60,7 @@ class EditClt extends Component {
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label></Form.Label>
-                        <Form.Control type="number" placeholder="Enter Client's Solde" name="solde"  value={this.state.solde} onChange={this.handleChange} type="hidden"/>
+                        <Form.Control type="hidden" placeholder="Enter Client's Solde" name="solde"  value={this.state.solde} onChange={this.handleChange} />
                     </Form.Group>
                     
                     <Button variant="primary" type="submit">
@@ -67,7 +74,7 @@ class EditClt extends Component {
     
 }
 const mapDispatchToProps={
- UpdateClt
+ UpdateClt: UpdateClt
 }
 
 

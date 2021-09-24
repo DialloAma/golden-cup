@@ -21,8 +21,8 @@ function NavBar() {
                             
                         </NavDropdown>
                         <NavDropdown title="Stock" id="basic-nav-dropdown">
-                            <NavDropdown.Item as={Link} to="AddStock">Add</NavDropdown.Item>
-                            <NavDropdown.Item as={Link} to="/ListStock">Enter</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to="AddStock">Enter</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to="/ListStock">List</NavDropdown.Item>
                         </NavDropdown>
                         <NavDropdown title="Payement" id="basic-nav-dropdown">
                             <NavDropdown.Item as={Link} to="AddPayement">Add</NavDropdown.Item>

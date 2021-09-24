@@ -1,16 +1,4 @@
-import { FaAcquisitionsIncorporated } from "react-icons/fa"
 
- 
-/*const initialState={
-    Client:[{
-        id: "",
-            name: "diallo",
-            phone: "621",
-            address: "labe",
-            solde: '0',
-    }]
-
- }*/
  export const cltReducer=(state={Client:[]}, action)=>{
     switch(action.type){
         case 'ADD_CLIENT':
@@ -38,4 +26,3 @@ import { FaAcquisitionsIncorporated } from "react-icons/fa"
     }
     
 }
-//export default cltReducer;

@@ -11,7 +11,7 @@ class Client extends Component {
             name: "",
             phone: "",
             address: "",
-            solde: '0',
+            solde: 0
         }
     }
     handleChange=(e)=>{
@@ -29,7 +29,7 @@ class Client extends Component {
             name: "",
             phone: "",
             address: "",
-            solde: "",
+            solde: 0,
 
         })
     }
@@ -53,7 +53,7 @@ class Client extends Component {
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Balance</Form.Label>
-                        <Form.Control type="number" placeholder="Enter Client's Solde" name="solde" type="hidden" value={this.state.solde} onChange={this.handleChange}/>
+                        <Form.Control type="number" placeholder="Enter Client's Solde" name="solde"  value={this.state.solde} onChange={this.handleChange}/>
                     </Form.Group>
                     
                     <Button variant="primary" type="submit">
