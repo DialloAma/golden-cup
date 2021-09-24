@@ -2,9 +2,15 @@
 
 export const AddClient = (newClt) => {
     newClt.id =Math.random().toString()
-    return {
-        type: 'ADD_CLIENT',
-        payload : newClt
+    return(dispatch,state,{getFirestore})=>{
+         getFirestore().collection('Client').add(newClt).then((doc)=>{
+              dispatch(
+                {
+                    type: 'ADD_CLIENT',
+                    payload : newClt
+                }
+              )
+         })
     }
     
 }
